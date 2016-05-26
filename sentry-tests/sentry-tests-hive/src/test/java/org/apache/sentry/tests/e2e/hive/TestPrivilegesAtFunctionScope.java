@@ -107,6 +107,32 @@ public class TestPrivilegesAtFunctionScope extends AbstractTestWithStaticConfigu
   }
 
   @Test
+  public void testCreateUdf() throws Exception {
+    setUpContext();
+    // user1 should be able create/drop temp functions
+    Connection connection = context.createConnection(USER1_1);
+    Statement statement = context.createStatement(connection);
+    statement.execute("USE " + DB1);
+    try {
+      statement.execute(
+          "add jar '../../../../../../../resources/myudfs.jar'");
+      assertFalse("add jar '../../../../../../../resources/myudfs.jar", true);
+    } catch (SQLException e) {
+      context.verifyAuthzException(e);
+    }
+
+    try {
+      statement.execute(
+          "create temporary function HashMur as 'org.hue.udf.MyUpper'");
+      assertFalse("create temporary function HashMur as 'org.hue.udf.MyUpper'", true);
+    } catch (SQLException e) {
+      context.verifyAuthzException(e);
+    }
+    context.close();
+
+  }
+
+  @Test
   public void testAndVerifyFuncPrivilegesPart1() throws Exception {
     setUpContext();
     // user1 should be able create/drop temp functions
