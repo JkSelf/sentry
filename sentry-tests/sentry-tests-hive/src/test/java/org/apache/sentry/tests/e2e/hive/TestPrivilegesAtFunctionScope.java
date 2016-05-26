@@ -154,6 +154,32 @@ public class TestPrivilegesAtFunctionScope extends AbstractTestWithStaticConfigu
   }
 
   @Test
+  public void testCreateUdf() throws Exception {
+    setUpContext();
+    // user1 should be able create/drop temp functions
+    Connection connection = context.createConnection(USER1_1);
+    Statement statement = context.createStatement(connection);
+    statement.execute("USE " + DB1);
+    try {
+      statement.execute(
+          "add jar '../../../../../../../resources/hive-contrib-1.1.0.jar'");
+      assertFalse("add jar '../../../../../../../resources/hive-contrib-1.1.0.jar", true);
+    } catch (SQLException e) {
+      context.verifyAuthzException(e);
+    }
+
+    try {
+      statement.execute(
+          "create temporary function HashMur as 'org.apache.hadoop.hive.contrib.udf.example.UDFExampleAdd'");
+      assertFalse("create temporary function HashMur as 'org.apache.hadoop.hive.contrib.udf.example.UDFExampleAdd'", true);
+    } catch (SQLException e) {
+      context.verifyAuthzException(e);
+    }
+    context.close();
+
+  }
+
+  @Test
   public void testAndVerifyFuncPrivilegesPart2() throws Exception {
     setUpContext();
     // user2 has select privilege on one of the tables in db1, should be able create/drop temp functions
@@ -166,8 +192,8 @@ public class TestPrivilegesAtFunctionScope extends AbstractTestWithStaticConfigu
           "CREATE TEMPORARY FUNCTION printf_test_2 AS 'org.apache.hadoop.hive.ql.udf.generic.GenericUDFPrintf'");
       verifyPrintFuncValues(statement, "SELECT printf_test_2('%s', value) FROM " + tableName1);
     } catch (Exception ex) {
-      LOGGER.error("test perm func printf_test_2 failed with reason: "
-          + ex.getStackTrace() + " " + ex.getMessage());
+      LOGGER.error("test perm func printf_test_2 failed with reason: " + ex.getStackTrace() + " "
+          + ex.getMessage());
       fail("Fail to test temp func printf_test_2");
     } finally {
       statement.execute("DROP TEMPORARY FUNCTION IF EXISTS printf_test_2");
