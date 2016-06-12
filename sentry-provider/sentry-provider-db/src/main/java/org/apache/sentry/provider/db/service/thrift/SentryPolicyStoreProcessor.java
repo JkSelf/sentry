@@ -728,12 +728,13 @@ public class SentryPolicyStoreProcessor implements SentryPolicyService.Iface {
     }
     return response;
   }
+
   @Override
-  public TListSentryRolesResponse list_sentry_principals_by_role(TListSentryPrincipalsInRoleRequest re
-      quest)throws TException {
+  public TListSentryRolesResponse list_sentry_principals_by_role(TListSentryPrincipalsInRoleRequest request)throws TException {
     TListSentryRolesResponse response = new TListSentryRolesResponse();
     return response;
   }
+
   @Override
   public TListSentryPrivilegesResponse list_sentry_privileges_by_role(
       TListSentryPrivilegesRequest request) throws TException {
