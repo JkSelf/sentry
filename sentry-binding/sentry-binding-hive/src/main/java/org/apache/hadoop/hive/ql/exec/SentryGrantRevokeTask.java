@@ -262,7 +262,12 @@ public class SentryGrantRevokeTask extends Task<DDLWork> implements Serializable
           writeToFile(writeActiveRolesInfo(roles), desc.getResFile());
           return RETURN_CODE_SUCCESS;
         }
-      } else {
+      }else if(operation.equals(RoleDDLDesc.RoleOperation.SHOW_ROLE_PRINCIPALS)){
+        //no-op
+        return RETURN_CODE_SUCCESS;
+
+      }
+      else {
         throw new HiveException("Unknown role operation "
             + operation.getOperationName());
       }

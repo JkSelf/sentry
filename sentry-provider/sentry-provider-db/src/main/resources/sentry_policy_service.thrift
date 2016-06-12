@@ -156,6 +156,10 @@ struct TListSentryRolesRequest {
 3: optional string groupName # for this group, or all roles for all groups if null
 }
 
+struct TListSentryPrincipalsInRoleRequest {
+1: required string roleName
+}
+
 struct TListSentryRolesForUserRequest {
 1: required i32 protocol_version = sentry_common_service.TSENTRY_SERVICE_V1,
 2: required string requestorUserName, # user on whose behalf the request is issued
@@ -308,6 +312,7 @@ service SentryPolicyService
 
   TListSentryRolesResponse list_sentry_roles_by_group(1:TListSentryRolesRequest request)
   TListSentryRolesResponse list_sentry_roles_by_user(1:TListSentryRolesForUserRequest request)
+  TListSentryRolesResponse list_sentry_principals_by_role(1:TListSentryPrincipalsInRoleRequest request)
 
   TListSentryPrivilegesResponse list_sentry_privileges_by_role(1:TListSentryPrivilegesRequest request)
 

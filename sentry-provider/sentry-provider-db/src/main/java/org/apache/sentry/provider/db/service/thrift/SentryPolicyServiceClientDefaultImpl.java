@@ -21,9 +21,7 @@ package org.apache.sentry.provider.db.service.thrift;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.security.PrivilegedExceptionAction;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import javax.security.auth.callback.CallbackHandler;
 
@@ -311,6 +309,12 @@ public class SentryPolicyServiceClientDefaultImpl implements SentryPolicyService
   public synchronized Set<TSentryRole> listRoles(String requestorUserName)
       throws SentryUserException {
     return listRolesByGroupName(requestorUserName, null);
+  }
+
+  public synchronized Set<TSentryRole> listPrincipalGrantInfoForRole(String roleName)
+      throws SentryUserException {
+
+    return listRolesByGroupName(roleName, null);
   }
 
   public synchronized Set<TSentryRole> listUserRoles(String requestorUserName)
