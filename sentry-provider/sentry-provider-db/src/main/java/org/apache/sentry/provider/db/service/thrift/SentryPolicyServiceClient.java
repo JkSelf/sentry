@@ -56,6 +56,8 @@ public interface SentryPolicyServiceClient {
   Set<TSentryPrivilege> listPrivilegesByRoleName(String requestorUserName, String roleName,
       List<? extends Authorizable> authorizable) throws SentryUserException;
 
+  Set<TSentryRole> listPrincipalGrantInfoForRole(String roleName) throws SentryUserException;
+  
   Set<TSentryRole> listRoles(String requestorUserName) throws SentryUserException;
 
   Set<TSentryRole> listUserRoles(String requestorUserName) throws SentryUserException;
