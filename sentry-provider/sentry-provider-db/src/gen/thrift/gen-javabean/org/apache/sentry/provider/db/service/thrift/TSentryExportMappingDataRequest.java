@@ -119,12 +119,12 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
   public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-    tmpMap.put(_Fields.PROTOCOL_VERSION, new org.apache.thrift.meta_data.FieldMetaData("protocol_version", org.apache.thrift.TFieldRequirementType.REQUIRED,
-            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
-    tmpMap.put(_Fields.REQUESTOR_USER_NAME, new org.apache.thrift.meta_data.FieldMetaData("requestorUserName", org.apache.thrift.TFieldRequirementType.REQUIRED,
-            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
-    tmpMap.put(_Fields.OBJECT_PATH, new org.apache.thrift.meta_data.FieldMetaData("objectPath", org.apache.thrift.TFieldRequirementType.OPTIONAL,
-            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+    tmpMap.put(_Fields.PROTOCOL_VERSION, new org.apache.thrift.meta_data.FieldMetaData("protocol_version", org.apache.thrift.TFieldRequirementType.REQUIRED, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+    tmpMap.put(_Fields.REQUESTOR_USER_NAME, new org.apache.thrift.meta_data.FieldMetaData("requestorUserName", org.apache.thrift.TFieldRequirementType.REQUIRED, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
+    tmpMap.put(_Fields.OBJECT_PATH, new org.apache.thrift.meta_data.FieldMetaData("objectPath", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
+        new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(TSentryExportMappingDataRequest.class, metaDataMap);
   }
@@ -135,8 +135,8 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
   }
 
   public TSentryExportMappingDataRequest(
-          int protocol_version,
-          String requestorUserName)
+    int protocol_version,
+    String requestorUserName)
   {
     this();
     this.protocol_version = protocol_version;
@@ -240,43 +240,43 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
 
   public void setFieldValue(_Fields field, Object value) {
     switch (field) {
-      case PROTOCOL_VERSION:
-        if (value == null) {
-          unsetProtocol_version();
-        } else {
-          setProtocol_version((Integer)value);
-        }
-        break;
+    case PROTOCOL_VERSION:
+      if (value == null) {
+        unsetProtocol_version();
+      } else {
+        setProtocol_version((Integer)value);
+      }
+      break;
 
-      case REQUESTOR_USER_NAME:
-        if (value == null) {
-          unsetRequestorUserName();
-        } else {
-          setRequestorUserName((String)value);
-        }
-        break;
+    case REQUESTOR_USER_NAME:
+      if (value == null) {
+        unsetRequestorUserName();
+      } else {
+        setRequestorUserName((String)value);
+      }
+      break;
 
-      case OBJECT_PATH:
-        if (value == null) {
-          unsetObjectPath();
-        } else {
-          setObjectPath((String)value);
-        }
-        break;
+    case OBJECT_PATH:
+      if (value == null) {
+        unsetObjectPath();
+      } else {
+        setObjectPath((String)value);
+      }
+      break;
 
     }
   }
 
   public Object getFieldValue(_Fields field) {
     switch (field) {
-      case PROTOCOL_VERSION:
-        return Integer.valueOf(getProtocol_version());
+    case PROTOCOL_VERSION:
+      return Integer.valueOf(getProtocol_version());
 
-      case REQUESTOR_USER_NAME:
-        return getRequestorUserName();
+    case REQUESTOR_USER_NAME:
+      return getRequestorUserName();
 
-      case OBJECT_PATH:
-        return getObjectPath();
+    case OBJECT_PATH:
+      return getObjectPath();
 
     }
     throw new IllegalStateException();
@@ -289,12 +289,12 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
     }
 
     switch (field) {
-      case PROTOCOL_VERSION:
-        return isSetProtocol_version();
-      case REQUESTOR_USER_NAME:
-        return isSetRequestorUserName();
-      case OBJECT_PATH:
-        return isSetObjectPath();
+    case PROTOCOL_VERSION:
+      return isSetProtocol_version();
+    case REQUESTOR_USER_NAME:
+      return isSetRequestorUserName();
+    case OBJECT_PATH:
+      return isSetObjectPath();
     }
     throw new IllegalStateException();
   }
@@ -492,7 +492,7 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
       while (true)
       {
         schemeField = iprot.readFieldBegin();
-        if (schemeField.type == org.apache.thrift.protocol.TType.STOP) {
+        if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (schemeField.id) {
@@ -500,7 +500,7 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
               struct.protocol_version = iprot.readI32();
               struct.setProtocol_versionIsSet(true);
-            } else {
+            } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
@@ -508,7 +508,7 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
               struct.requestorUserName = iprot.readString();
               struct.setRequestorUserNameIsSet(true);
-            } else {
+            } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
@@ -516,7 +516,7 @@ public class TSentryExportMappingDataRequest implements org.apache.thrift.TBase<
             if (schemeField.type == org.apache.thrift.protocol.TType.STRING) {
               struct.objectPath = iprot.readString();
               struct.setObjectPathIsSet(true);
-            } else {
+            } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;

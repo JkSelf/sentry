@@ -117,20 +117,20 @@ public class TSentryMappingData implements org.apache.thrift.TBase<TSentryMappin
   public static final Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
   static {
     Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
-    tmpMap.put(_Fields.GROUP_ROLES_MAP, new org.apache.thrift.meta_data.FieldMetaData("groupRolesMap", org.apache.thrift.TFieldRequirementType.OPTIONAL,
-        new org.apache.thrift.meta_data.MapMetaData(org.apache.thrift.protocol.TType.MAP,
-            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING),
-            new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET,
+    tmpMap.put(_Fields.GROUP_ROLES_MAP, new org.apache.thrift.meta_data.FieldMetaData("groupRolesMap", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
+        new org.apache.thrift.meta_data.MapMetaData(org.apache.thrift.protocol.TType.MAP, 
+            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING), 
+            new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET, 
                 new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)))));
-    tmpMap.put(_Fields.ROLE_PRIVILEGES_MAP, new org.apache.thrift.meta_data.FieldMetaData("rolePrivilegesMap", org.apache.thrift.TFieldRequirementType.OPTIONAL,
-        new org.apache.thrift.meta_data.MapMetaData(org.apache.thrift.protocol.TType.MAP,
-            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING),
-            new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET,
+    tmpMap.put(_Fields.ROLE_PRIVILEGES_MAP, new org.apache.thrift.meta_data.FieldMetaData("rolePrivilegesMap", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
+        new org.apache.thrift.meta_data.MapMetaData(org.apache.thrift.protocol.TType.MAP, 
+            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING), 
+            new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET, 
                 new org.apache.thrift.meta_data.StructMetaData(org.apache.thrift.protocol.TType.STRUCT, TSentryPrivilege.class)))));
-    tmpMap.put(_Fields.USER_ROLES_MAP, new org.apache.thrift.meta_data.FieldMetaData("userRolesMap", org.apache.thrift.TFieldRequirementType.OPTIONAL,
-        new org.apache.thrift.meta_data.MapMetaData(org.apache.thrift.protocol.TType.MAP,
-            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING),
-            new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET,
+    tmpMap.put(_Fields.USER_ROLES_MAP, new org.apache.thrift.meta_data.FieldMetaData("userRolesMap", org.apache.thrift.TFieldRequirementType.OPTIONAL, 
+        new org.apache.thrift.meta_data.MapMetaData(org.apache.thrift.protocol.TType.MAP, 
+            new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING), 
+            new org.apache.thrift.meta_data.SetMetaData(org.apache.thrift.protocol.TType.SET, 
                 new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.STRING)))));
     metaDataMap = Collections.unmodifiableMap(tmpMap);
     org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(TSentryMappingData.class, metaDataMap);
@@ -314,43 +314,43 @@ public class TSentryMappingData implements org.apache.thrift.TBase<TSentryMappin
 
   public void setFieldValue(_Fields field, Object value) {
     switch (field) {
-      case GROUP_ROLES_MAP:
-        if (value == null) {
-          unsetGroupRolesMap();
-        } else {
-          setGroupRolesMap((Map<String,Set<String>>)value);
-        }
-        break;
+    case GROUP_ROLES_MAP:
+      if (value == null) {
+        unsetGroupRolesMap();
+      } else {
+        setGroupRolesMap((Map<String,Set<String>>)value);
+      }
+      break;
 
-      case ROLE_PRIVILEGES_MAP:
-        if (value == null) {
-          unsetRolePrivilegesMap();
-        } else {
-          setRolePrivilegesMap((Map<String,Set<TSentryPrivilege>>)value);
-        }
-        break;
+    case ROLE_PRIVILEGES_MAP:
+      if (value == null) {
+        unsetRolePrivilegesMap();
+      } else {
+        setRolePrivilegesMap((Map<String,Set<TSentryPrivilege>>)value);
+      }
+      break;
 
-      case USER_ROLES_MAP:
-        if (value == null) {
-          unsetUserRolesMap();
-        } else {
-          setUserRolesMap((Map<String,Set<String>>)value);
-        }
-        break;
+    case USER_ROLES_MAP:
+      if (value == null) {
+        unsetUserRolesMap();
+      } else {
+        setUserRolesMap((Map<String,Set<String>>)value);
+      }
+      break;
 
     }
   }
 
   public Object getFieldValue(_Fields field) {
     switch (field) {
-      case GROUP_ROLES_MAP:
-        return getGroupRolesMap();
+    case GROUP_ROLES_MAP:
+      return getGroupRolesMap();
 
-      case ROLE_PRIVILEGES_MAP:
-        return getRolePrivilegesMap();
+    case ROLE_PRIVILEGES_MAP:
+      return getRolePrivilegesMap();
 
-      case USER_ROLES_MAP:
-        return getUserRolesMap();
+    case USER_ROLES_MAP:
+      return getUserRolesMap();
 
     }
     throw new IllegalStateException();
@@ -363,12 +363,12 @@ public class TSentryMappingData implements org.apache.thrift.TBase<TSentryMappin
     }
 
     switch (field) {
-      case GROUP_ROLES_MAP:
-        return isSetGroupRolesMap();
-      case ROLE_PRIVILEGES_MAP:
-        return isSetRolePrivilegesMap();
-      case USER_ROLES_MAP:
-        return isSetUserRolesMap();
+    case GROUP_ROLES_MAP:
+      return isSetGroupRolesMap();
+    case ROLE_PRIVILEGES_MAP:
+      return isSetRolePrivilegesMap();
+    case USER_ROLES_MAP:
+      return isSetUserRolesMap();
     }
     throw new IllegalStateException();
   }
@@ -564,7 +564,7 @@ public class TSentryMappingData implements org.apache.thrift.TBase<TSentryMappin
       while (true)
       {
         schemeField = iprot.readFieldBegin();
-        if (schemeField.type == org.apache.thrift.protocol.TType.STOP) {
+        if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
           break;
         }
         switch (schemeField.id) {
@@ -594,7 +594,7 @@ public class TSentryMappingData implements org.apache.thrift.TBase<TSentryMappin
                 iprot.readMapEnd();
               }
               struct.setGroupRolesMapIsSet(true);
-            } else {
+            } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
@@ -625,7 +625,7 @@ public class TSentryMappingData implements org.apache.thrift.TBase<TSentryMappin
                 iprot.readMapEnd();
               }
               struct.setRolePrivilegesMapIsSet(true);
-            } else {
+            } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
@@ -655,7 +655,7 @@ public class TSentryMappingData implements org.apache.thrift.TBase<TSentryMappin
                 iprot.readMapEnd();
               }
               struct.setUserRolesMapIsSet(true);
-            } else {
+            } else { 
               org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
             }
             break;
