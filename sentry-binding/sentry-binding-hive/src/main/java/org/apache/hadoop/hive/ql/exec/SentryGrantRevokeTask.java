@@ -264,6 +264,8 @@ public class SentryGrantRevokeTask extends Task<DDLWork> implements Serializable
         }
       }else if(operation.equals(RoleDDLDesc.RoleOperation.SHOW_ROLE_PRINCIPALS)){
         //no-op
+        Set<TSentryRole> roles = sentryClient.listPrincipalGrantInfoForRole(name);
+        writeToFile(writeRolesInfo(roles), desc.getResFile());
         return RETURN_CODE_SUCCESS;
 
       }
